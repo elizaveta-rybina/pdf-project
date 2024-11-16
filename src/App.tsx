@@ -11,7 +11,7 @@ const App = () => {
 		<div className='App'>
 			<button onClick={() => changeLanguage('en')}>English</button>
 			<button onClick={() => changeLanguage('ru')}>Русский</button>
-			<h1>{t('welcomeMessage')}</h1>
+			<h1>{t("title")}</h1>
 		</div>
 	)
 }
