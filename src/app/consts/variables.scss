@@ -1,0 +1,62 @@
+:root {
+  /* Цвета */
+  --text-primary: #03060C;
+  --text-secondary: #2A4A6A;
+  --text-tertiary: #96AEC4;
+  --accent-primary: #2A59AE;
+  --accent-secondary: #6D96CE;
+  --background: #FFFFFF;
+
+  /* Шрифты */
+  --font-regular: 'Graphik, sans-serif';
+  --font-bold: 'Graphik-Bold, sans-serif';
+  --font-italic: 'Graphik-Italic, sans-serif';
+
+  /* Вес шрифтов */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 900;
+
+  /* Размеры шрифтов */
+  --font-size-smaller: 12px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+  --font-size-title: 24px;
+
+  /* Межстрочные интервалы */
+  --line-height-smaller: 14px;
+  --line-height-small: 16px;
+  --line-height-medium: 18px;
+  --line-height-large: 21px;
+  --line-height-title: 26px;
+
+  /* Паддинги */
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  
+  /* Размеры кнопок */
+  --button-padding: 0.5rem 1rem;
+  --button-font-size: 0.9rem;
+
+  /* Настройки для мобильных устройств */
+  --up-size: 0;
+  --font-size-smaller: calc(12px + var(--up-size));
+  --font-size-small: calc(14px + var(--up-size));
+  --font-size-medium: calc(16px + var(--up-size));
+  --font-size-large: calc(18px + var(--up-size));
+  --font-size-title: calc(24px + var(--up-size) * 2);
+
+  --line-height-smaller: calc(14px + var(--up-size));
+  --line-height-small: calc(16px + var(--up-size));
+  --line-height-medium: calc(18px + var(--up-size));
+  --line-height-large: calc(21px + var(--up-size));
+  --line-height-title: calc(26px + var(--up-size) * 2);
+}
+
+/* Настройки для планшетов */
+@media (min-width: 600px) {
+  :root {
+    --up-size: 4px;
+  }
+}
