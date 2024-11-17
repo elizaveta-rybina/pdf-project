@@ -1,5 +1,4 @@
 import { styles } from '../styles';
-import { STRINGS } from 'app/consts/translations';
 
 export const AuthPage = () => {
 	return (

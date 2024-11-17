@@ -1,7 +1,6 @@
 const isTablet: boolean = window.innerWidth > 600;
 const upSize: number = isTablet ? 4 : 0;
 
-
 type FontSizeKeys = 'fontSizeSmaller' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge' | 'fontSizeTitle';
 
 export const FONTS_SIZE: Record<FontSizeKeys, string> = {
@@ -22,20 +21,7 @@ export const LINE_HEIGHTS: Record<LineHeightKeys, string> = {
   lineHeightTitle: `${26 + upSize * 2}px`,
 };
 
-type FontFamilies = {
-  regular: string;
-  bold: string;
-  italic: string;
-};
-
-export const FONT_FAMILIES: FontFamilies = {
-  regular: "Graphik, sans-serif",
-  bold: "Graphik-Bold, sans-serif",
-  italic: "Graphik-Italic, sans-serif",
-};
-
-
-type FontWeights = {
+interface FontWeights {
   regular: number;
   bold: number;
   extraBold: number;
