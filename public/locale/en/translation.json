@@ -1,3 +1,10 @@
 {
-	"title": "Hello PDF Application"
+  "title": "Hello PDF Application",
+  "header": {
+    "merge": "Merge",
+    "compress": "Compress",
+    "convert": "Convert",
+    "split": "Split",
+    "login": "Login"
+  }
 }

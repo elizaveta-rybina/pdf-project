@@ -3,9 +3,10 @@
   --text-primary: #03060C;
   --text-secondary: #2A4A6A;
   --text-tertiary: #133E87;
-  --accent-primary: #608BC1;
-  --accent-secondary: #CBDCEB;
+  --accent-primary: #7b9fc9;
+  --accent-secondary: #468be0;
   --background: #F3F3E0;
+  --text-white: #FFF;
 
   /* Вес шрифтов */
   --font-weight-regular: 400;
@@ -13,11 +14,11 @@
   --font-weight-extra-bold: 900;
 
   /* Размеры шрифтов */
-  --font-size-smaller: 12px;
-  --font-size-small: 14px;
-  --font-size-medium: 16px;
-  --font-size-large: 18px;
-  --font-size-title: 24px;
+  --font-size-smaller: 10px;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-size-title: 22px;
 
   /* Межстрочные интервалы */
   --line-height-smaller: 14px;
@@ -36,22 +37,22 @@
 
   /* Настройки для мобильных устройств */
   --up-size: 0;
-  --font-size-smaller: calc(12px + var(--up-size));
-  --font-size-small: calc(14px + var(--up-size));
-  --font-size-medium: calc(16px + var(--up-size));
-  --font-size-large: calc(18px + var(--up-size));
-  --font-size-title: calc(24px + var(--up-size) * 2);
+  --font-size-smaller: calc(10px + var(--up-size));
+  --font-size-small: calc(12px + var(--up-size));
+  --font-size-medium: calc(14px + var(--up-size));
+  --font-size-large: calc(16px + var(--up-size));
+  --font-size-title: calc(22px + var(--up-size) * 2);
 
-  --line-height-smaller: calc(14px + var(--up-size));
-  --line-height-small: calc(16px + var(--up-size));
-  --line-height-medium: calc(18px + var(--up-size));
-  --line-height-large: calc(21px + var(--up-size));
-  --line-height-title: calc(26px + var(--up-size) * 2);
+  --line-height-smaller: calc(12px + var(--up-size));
+  --line-height-small: calc(14px + var(--up-size));
+  --line-height-medium: calc(16px + var(--up-size));
+  --line-height-large: calc(18px + var(--up-size));
+  --line-height-title: calc(24px + var(--up-size) * 2);
 }
 
 /* Настройки для планшетов */
 @media (min-width: 600px) {
   :root {
-    --up-size: 4px;
+    --up-size: 5px;
   }
 }

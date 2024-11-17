@@ -1,30 +1,14 @@
+import { LanguageToggle } from 'features/LanguageToggle'
+import { LoginButton } from 'entities/LoginButton'
+import { useTranslation } from 'react-i18next'
+
 import styles from '../styles/Header.module.scss'
-
-interface ButtonProps {
-	onClick: () => void
-	className: string
-	children: React.ReactNode
-}
-
-function Button({ onClick, className, children }: ButtonProps) {
-	return (
-		<button onClick={onClick} className={`${styles.button} ${className}`}>
-			{children}
-		</button>
-	)
-}
 
 interface HeaderProps {}
 
+//TODO: Вынести навигацию в отдельный компонент
 export const Header = ({}: HeaderProps) => {
-	const handleLanguageToggle = () => {
-		console.log('Toggle language')
-	}
-
-	const handleLoginClick = () => {
-		console.log('Login clicked')
-	}
-
+	const { t } = useTranslation();
 	return (
 		<header className={styles.header}>
 			<a href='/' className={styles.logo}>
@@ -33,26 +17,22 @@ export const Header = ({}: HeaderProps) => {
 
 			<nav className={styles.nav}>
 				<a href='/page1' className={styles.navItem}>
-					Page 1
-				</a>
-				<a href='/page2' className={styles.navItem}>
-					Page 2
+					{t('header.merge')}
 				</a>
 				<a href='/page3' className={styles.navItem}>
-					Page 3
+					{t('header.split')}
+				</a>
+				<a href='/page2' className={styles.navItem}>
+					{t('header.convert')}
+				</a>
+				<a href='/page3' className={styles.navItem}>
+					{t('header.compress')}
 				</a>
 			</nav>
 
 			<div className={styles.rightControls}>
-				<Button
-					className={styles.languageToggle}
-					onClick={handleLanguageToggle}
-				>
-					RU / EN
-				</Button>
-				<Button className={styles.loginButton} onClick={handleLoginClick}>
-					Login
-				</Button>
+				<LanguageToggle />
+				<LoginButton />
 			</div>
 		</header>
 	)
