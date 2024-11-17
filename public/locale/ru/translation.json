@@ -1,3 +1,13 @@
 {
-	"title": "Привет PDF Приложение"
+  "authPage": {
+    "title": "Вход в вашу учетную запись",
+    "loginButton": "Войти",
+    "registerLink": "Создать учетную запись",
+    "registerLinkFull": "У Вас нет учётной записи?",
+    "forgotPasswordButton": "Забыли пароль?",
+    "rememberMeLabel": "Запомнить меня",
+    "orLabel": "или",
+    "passwordPlaceholder": "Пароль",
+    "passwordConfirmationPlaceholder": "Подтвердите пароль"
+  }
 }

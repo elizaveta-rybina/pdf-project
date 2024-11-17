@@ -1,3 +1,13 @@
 {
-	"title": "Hello PDF Application"
+  "authPage": {
+    "title": "Login to your account",
+    "loginButton": "Login",
+    "registerLink": "Create an account",
+    "registerLinkFull": "Don't have an account?",
+    "forgotPasswordButton": "Forgot Password?",
+    "rememberMeLabel": "Remember me",
+    "orLabel": "or",
+    "passwordPlaceholder": "Password",
+    "passwordConfirmationPlaceholder": "Confirm Password"
+  }
 }
