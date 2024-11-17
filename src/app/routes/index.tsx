@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {lazy} from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Layout } from 'shared/ui/Layout';
+import { MainPage } from 'pages/MainPage';
 
-export const router = createBrowserRouter([
+export const routes = [
   {
     path: '/',
-   //element: < />,
+    element: (
+      <Layout>
+        <MainPage />
+      </Layout>
+    ),
   },
-  {
-    path: '/about',
-    //element: <AboutPage />,
-  },
-]);
+];
 
 export const AppRoutes = () => {
+  const router = createBrowserRouter(routes);
+
   return <RouterProvider router={router} />;
 };
