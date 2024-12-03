@@ -1,0 +1,55 @@
+@import 'app/consts/variables';
+
+//TODO: Переписать стили нормально с учетом препроцессора
+
+.boardContainer {
+	border-radius: 3rem;
+	border: 3px solid var(--accent-primary);
+	padding: 2rem;
+	background-color: transparent;
+	pointer-events: all;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 250px;
+	align-items: center;
+}
+
+.boardTitle {
+	font-family: "Poppins", sans-serif;
+	font-size: 26px;
+	letter-spacing: 1px;
+	font-weight: var(--font-weight-bold);
+	color: var(--text-primary);
+	line-height: 1;
+}
+
+.boardDescription {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	line-height: var(--line-height-small);
+	color: var(--text-secondary);
+	letter-spacing: 1px;
+	margin-top: auto;
+}
+
+.icon{
+	color: var(--accent-secondary);
+}
+
+.boardContainerInactive {
+	align-items: center;
+	border-radius: 3rem;
+	border: 3px solid var(--accent-primary);
+	padding: 2rem;
+	background-color: transparent;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 250px;
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: not-allowed;
+}

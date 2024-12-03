@@ -1,0 +1,18 @@
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2rem;
+	margin-top: 2rem;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
+.container > * {
+	flex: 1 1 calc(25% - 2rem);
+	max-width: calc(25% - 2rem);
+	box-sizing: border-box;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

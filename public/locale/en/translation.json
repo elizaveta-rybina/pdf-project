@@ -1,10 +1,30 @@
 {
-  "title": "Hello PDF Application",
-  "header": {
-    "merge": "Merge",
-    "compress": "Compress",
-    "convert": "Convert",
-    "split": "Split",
-    "login": "Login"
-  }
+	"title": "Hello PDF Application",
+	"header": {
+		"merge": "Merge",
+		"compress": "Compress",
+		"convert": "Convert",
+		"split": "Split",
+		"login": "Login"
+	},
+	"boardsTitle": {
+		"merge": "Merge PDF",
+		"split": "Split PDF",
+		"compress": "Compress PDF",
+		"wordToPDF": "Word To PDF",
+		"PDFToPowerPoint": "PDF to PowerPoint",
+		"PowerPointToPDF": "PowerPoint to PDF",
+		"JPGToPDF": "JPG to PDF",
+		"PDFToJPG": "PDF to JPG"
+	},
+	"boardsDescription": {
+		"merge": "Combine PDFs in the order you want with the easiest PDF merger available.",
+		"split": "Separate one page or a whole set for easy conversion into independent PDF files.",
+		"compress": "Reduce file size while optimizing for maximal PDF quality.",
+		"wordToPDF": "Make DOC and DOCX files easy to read by converting them to PDF.",
+		"PDFToPowerPoint": "Turn your PDF files into easy to edit PPT and PPTX slideshows.",
+		"PowerPointToPDF": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
+		"JPGToPDF": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
+		"PDFToJPG": "Convert each PDF page into a JPG or extract all images contained in a PDF."
+	}
 }
