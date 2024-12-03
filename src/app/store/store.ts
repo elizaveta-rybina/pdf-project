@@ -1,13 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
-import ilovepdfReducer from './IlovepdfApiSlice'
+// store.ts
+
+import { configureStore } from '@reduxjs/toolkit';
+import ilovepdfReducer from './ilovepdfApiSlice';
 
 const store = configureStore({
-	reducer: {
-		ilovepdf: ilovepdfReducer,
-	},
-})
+  reducer: {
+    ilovepdf: ilovepdfReducer,
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
-export default store
+export default store;
