@@ -1,12 +1,14 @@
-// store.ts
-
 import { configureStore } from '@reduxjs/toolkit';
-import ilovepdfReducer from './ilovepdfApiSlice';
+import PdfReducer from './slices/pdfSlice';
 
 const store = configureStore({
   reducer: {
-    ilovepdf: ilovepdfReducer,
+    pdf: PdfReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
