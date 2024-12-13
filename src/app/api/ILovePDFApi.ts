@@ -1,12 +1,12 @@
-import Auth from "@ilovepdf/ilovepdf-js-core/auth/Auth";
-import JWT from "@ilovepdf/ilovepdf-js-core/auth/JWT";
-import TaskFactory, { TaskFactoryI } from "@ilovepdf/ilovepdf-js-core/tasks/TaskFactory";
-import ILovePDFCoreApi, { GetReceiverInfoResponse, GetSignatureStatus } from '@ilovepdf/ilovepdf-js-core/ILovePDFCoreApi';
-import TaskI from "@ilovepdf/ilovepdf-js-core/tasks/TaskI";
-import ILovePDFTool from "@ilovepdf/ilovepdf-js-core/types/ILovePDFTool";
-import XHRInterface from "@ilovepdf/ilovepdf-js-core/utils/XHRInterface";
-import XHRPromise from "app/api/XHRPromise";
-import SignatureStatus from "@ilovepdf/ilovepdf-js-core/types/responses/SignatureStatus";
+import Auth from "@ilovepdf/ilovepdf-js-core/auth/Auth"
+import JWT from "@ilovepdf/ilovepdf-js-core/auth/JWT"
+import ILovePDFCoreApi, { GetReceiverInfoResponse, GetSignatureStatus } from '@ilovepdf/ilovepdf-js-core/ILovePDFCoreApi'
+import TaskFactory, { TaskFactoryI } from "@ilovepdf/ilovepdf-js-core/tasks/TaskFactory"
+import TaskI from "@ilovepdf/ilovepdf-js-core/tasks/TaskI"
+import ILovePDFTool from "@ilovepdf/ilovepdf-js-core/types/ILovePDFTool"
+import SignatureStatus from "@ilovepdf/ilovepdf-js-core/types/responses/SignatureStatus"
+import XHRInterface from "@ilovepdf/ilovepdf-js-core/utils/XHRInterface"
+import XHRPromise from './XHRPromise'
 
 export interface ILovePDFApiI {
     /**
