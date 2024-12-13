@@ -1,7 +1,7 @@
-import React, {lazy} from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from 'shared/ui/Layout';
-import { MainPage } from 'pages/MainPage';
+import { MainPage } from 'pages/MainPage'
+import { MergePage } from 'pages/MergePage'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Layout } from 'shared/ui/Layout'
 
 export const routes = [
   {
@@ -9,6 +9,14 @@ export const routes = [
     element: (
       <Layout>
         <MainPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/merge',
+    element: (
+      <Layout>
+        <MergePage />
       </Layout>
     ),
   },
