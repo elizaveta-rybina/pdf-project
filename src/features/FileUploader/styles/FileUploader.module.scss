@@ -1,0 +1,22 @@
+@import 'app/consts/variables';
+
+.container{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.button {
+	background-color: var(--accent-primary);
+	padding: 20px 40px;
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  font-family: sans-serif;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+	font-size: var(--font-size-medium);
+	font-weight: 600;
+}

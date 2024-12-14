@@ -3,13 +3,16 @@ import MergeTask from '@ilovepdf/ilovepdf-js-core/tasks/MergeTask'
 import ILovePDFFile from '@ilovepdf/ilovepdf-js/ILovePDFFile'
 import { addFile, setTask } from 'app/store/slices/pdfSlice'
 import { ChangeEvent, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
+import styles from '../styles/FileUploader.module.scss'
 
 const instance = new ILovePDFApi(process.env.REACT_APP_PUBLIC_KEY!);
 
 //TODO: Переделать под более абстрактный компонент
 
 export const FileUploader = () => {
+  const {t} = useTranslation();
   const dispatch = useDispatch();
 
   const task = instance.newTask('merge') as MergeTask;
@@ -55,15 +58,17 @@ export const FileUploader = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      
       <input
-        id="file-element"
+        id="upload"
         type="file"
         accept=".pdf"
         multiple
+        hidden
         onChange={handleFileUpload}
       />
-      <p>Выберите файлы для объединения.</p>
+      <label className={styles.button} htmlFor="upload">{t('mergePage.buttonText')}</label>
     </div>
   );
 };
