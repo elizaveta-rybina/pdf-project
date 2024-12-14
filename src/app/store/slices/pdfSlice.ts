@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import ILovePDFFile from 'app/api/ILovePDFFile';
 
 interface PdfState {
   files: Array<{ name: string; file: File; url: string }>;
-  task: any; // Тип для задачи (можно уточнить тип)
+  task: any;
 }
 
 const initialState: PdfState = {

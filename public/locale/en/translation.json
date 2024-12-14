@@ -26,5 +26,13 @@
 		"PowerPointToPDF": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
 		"JPGToPDF": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
 		"PDFToJPG": "Convert each PDF page into a JPG or extract all images contained in a PDF."
+	},
+	"mergePage": {
+		"title" : "Merge PDF files",
+		"text": "Combine PDFs in the order you want with the easiest PDF merger available.",
+		"buttonText": "Select PDF files",
+		"notLoadedText": "Files not uploaded",
+		"loadedText": "Files uploaded successfully!",
+		"mergeButtonText": "Merge files"
 	}
 }
