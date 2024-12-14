@@ -10,8 +10,8 @@ export const MergePage = () => {
 		<>
 			<h1 className={styles.title}>{t('mergePage.title')}</h1>
 			<p className={styles.text}>{t('mergePage.text')}</p>
-			<MergeButton/>
 			<FileUploader/>
+			<MergeButton/>
 		</>
 	);
 }
