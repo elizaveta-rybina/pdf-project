@@ -30,6 +30,9 @@
 	"mergePage": {
 		"title" : "Merge PDF files",
 		"text": "Combine PDFs in the order you want with the easiest PDF merger available.",
-		"buttonText": "Select PDF files"
+		"buttonText": "Select PDF files",
+		"notLoadedText": "Files not uploaded",
+		"loadedText": "Files uploaded successfully!",
+		"mergeButtonText": "Merge files"
 	}
 }

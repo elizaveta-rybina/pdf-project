@@ -20,3 +20,15 @@
 	font-size: var(--font-size-medium);
 	font-weight: 600;
 }
+
+.text{
+	font-size: var(--font-size-medium);
+	margin: 0.5rem;
+}
+
+.list{
+	font-size: var(--font-size-small);
+	margin: 0 0 1rem 0;
+	list-style: none;
+	padding-left: 0;
+}
