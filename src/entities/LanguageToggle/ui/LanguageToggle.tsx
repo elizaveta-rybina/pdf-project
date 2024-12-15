@@ -1,7 +1,10 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { SlGlobe } from "react-icons/sl";
-import styles from '../styles/LanguageToggle.module.scss';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+
+import { SlGlobe } from "react-icons/sl"
+
+import styles from '../styles/LanguageToggle.module.scss'
+
 
 export const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();

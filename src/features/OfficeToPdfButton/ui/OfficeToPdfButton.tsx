@@ -1,10 +1,13 @@
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { clearFiles } from 'app/store/slices/pdfSlice'
 import { RootState } from 'app/store/store'
 import { showToast } from 'entities/Toast'
 import { saveAs } from 'file-saver'
-import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
-import styles from '../styles/OfficeToPdf.module.scss'
+
+import styles from 'shared/styles/Button.module.scss'
+
 
 export const OfficeToPdfButton = () => {
   const {t} = useTranslation();

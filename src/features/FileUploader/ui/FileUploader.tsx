@@ -1,12 +1,17 @@
-import ILovePDFApi from '@ilovepdf/ilovepdf-js'
-import ILovePDFTool from '@ilovepdf/ilovepdf-js-core/types/ILovePDFTool'
-import ILovePDFFile from 'app/api/ILovePDFFile'
-import { addFile, setTask } from 'app/store/slices/pdfSlice'
-import { showToast } from 'entities/Toast'
-import { ChangeEvent, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
-import styles from '../styles/FileUploader.module.scss'
+import { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+
+import ILovePDFApi from '@ilovepdf/ilovepdf-js';
+import ILovePDFTool from '@ilovepdf/ilovepdf-js-core/types/ILovePDFTool';
+import ILovePDFFile from 'app/api/ILovePDFFile';
+
+import { addFile, setTask } from 'app/store/slices/pdfSlice';
+
+import { showToast } from 'entities/Toast';
+
+import styles from '../styles/FileUploader.module.scss';
+
 
 interface FileUploaderProps {
   taskType: ILovePDFTool;

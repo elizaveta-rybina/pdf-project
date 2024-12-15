@@ -1,10 +1,13 @@
-import { clearFiles } from 'app/store/slices/pdfSlice'
-import { RootState } from 'app/store/store'
-import { showToast } from 'entities/Toast'
-import { saveAs } from 'file-saver'
-import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
-import styles from '../styles/CompressButton.module.scss'
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveAs } from 'file-saver';
+
+import { clearFiles } from 'app/store/slices/pdfSlice';
+import { RootState } from 'app/store/store';
+import { showToast } from 'entities/Toast';
+
+import styles from 'shared/styles/Button.module.scss';
+
 
 export const CompressButton = () => {
   const {t} = useTranslation();

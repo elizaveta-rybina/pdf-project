@@ -1,8 +1,11 @@
-import { CompressButton } from 'features/CompressButton'
-import { FileUploader } from 'features/FileUploader'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { CompressButton } from 'features/CompressButton'
+import { FileUploader } from 'features/FileUploader'
+
 import styles from '../style/CompressPage.module.scss'
+
 
 export const CompressPage = () => {
 	const { t } = useTranslation();
