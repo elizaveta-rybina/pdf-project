@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface PdfState {
+export interface PdfState { // Экспортируем PdfState
   files: Array<{ name: string; file: File; url: string }>;
-  task: any;
+  task: any; // Тип task можно уточнить, если есть информация о его типе
 }
 
 const initialState: PdfState = {

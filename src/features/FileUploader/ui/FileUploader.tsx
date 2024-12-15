@@ -1,34 +1,25 @@
 import ILovePDFApi from '@ilovepdf/ilovepdf-js'
-import MergeTask from '@ilovepdf/ilovepdf-js-core/tasks/MergeTask'
-import ILovePDFFile from '@ilovepdf/ilovepdf-js/ILovePDFFile'
+import ILovePDFTool from '@ilovepdf/ilovepdf-js-core/types/ILovePDFTool'
+import ILovePDFFile from 'app/api/ILovePDFFile'
 import { addFile, setTask } from 'app/store/slices/pdfSlice'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import styles from '../styles/FileUploader.module.scss'
 
+interface FileUploaderProps {
+  taskType: ILovePDFTool;
+  taskClass: new (...args: any[]) => any;
+}
+
 const instance = new ILovePDFApi(process.env.REACT_APP_PUBLIC_KEY!);
 
-export const FileUploader = () => {
+export const FileUploader = ({ taskType, taskClass }: FileUploaderProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]); // Состояние для имён загруженных файлов
+  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
 
-  const task = instance.newTask('merge') as MergeTask;
-
-  useEffect(() => {
-  const startTask = async () => {
-    try {
-      await task.start();
-      console.log('Задача успешно создана и запущена.');
-      dispatch(setTask(task));
-    } catch (error) {
-      console.error('Ошибка при запуске задачи:', error);
-    }
-  };
-
-  startTask();
-}, [dispatch, task]);
+  const task = instance.newTask(taskType) as InstanceType<typeof taskClass>;
 
   const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
   const files = event.target.files;
@@ -37,7 +28,6 @@ export const FileUploader = () => {
   const fileArray = Array.from(files);
 
   try {
-    // Ждём добавления всех файлов
     const uploaded = await Promise.all(
       fileArray.map(async (file) => {
         if (file.type !== 'application/pdf') {
@@ -48,6 +38,7 @@ export const FileUploader = () => {
         const fileURL = URL.createObjectURL(file);
         const ilovePDFFile = new ILovePDFFile(file);
 
+        // Добавляем файл в задачу
         await task.addFile(ilovePDFFile);
         console.log(`Файл ${file.name} добавлен в задачу.`);
 
@@ -57,21 +48,37 @@ export const FileUploader = () => {
           url: fileURL,
         };
 
+        // Добавляем файл в Redux
         dispatch(addFile(pdfFile));
         return file.name;
       })
     );
 
-    // Обновляем состояние для успешно добавленных файлов
+    const filteredUploaded = uploaded.filter((name): name is string => name !== null);
+
     setUploadedFiles((prevFiles) => [
       ...prevFiles,
-      ...uploaded.filter((name): name is string => name !== null),
+      ...filteredUploaded,
     ]);
   } catch (error) {
     console.error('Ошибка при добавлении файлов:', error);
   }
 };
 
+useEffect(() => {
+    const startTask = async () => {
+      try {
+        await task.start();
+        dispatch(setTask(task));
+      } catch (error) {
+        console.error('Ошибка при запуске задачи:', error);
+      }
+    };
+
+    startTask();
+  }, [dispatch, task]);
+
+  console.log(task);
 
 
   return (
@@ -84,12 +91,14 @@ export const FileUploader = () => {
         hidden
         onChange={handleFileUpload}
       />
-      <label className={styles.button} htmlFor="upload">{t('mergePage.buttonText')}</label>
+      <label className={styles.button} htmlFor="upload">
+        {t('uploadButton.buttonText')}
+      </label>
 
       <p className={styles.text}>
         {uploadedFiles.length === 0
-          ? t('mergePage.notLoadedText')
-          : t('mergePage.loadedText')}
+          ? t('uploadButton.notLoadedText')
+          : t('uploadButton.loadedText')}
       </p>
 
       {uploadedFiles.length > 0 && (
