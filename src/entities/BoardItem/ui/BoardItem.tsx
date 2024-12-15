@@ -1,7 +1,9 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import styles from '../styles/BoardItem.module.scss'
+
 import { IconType } from 'react-icons'
+
+import styles from '../styles/BoardItem.module.scss'
+
 
 interface BoardItemProps {
   title: string

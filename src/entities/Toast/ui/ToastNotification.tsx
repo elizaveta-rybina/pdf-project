@@ -1,5 +1,7 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
+
 
 interface ToastNotificationProps {
   title: string;

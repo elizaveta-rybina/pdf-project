@@ -1,8 +1,11 @@
-import { FileUploader } from 'features/FileUploader'
-import { MergeButton } from 'features/MergeButton'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styles from "shared/styles/Pages.module.scss"
+
+import { FileUploader } from 'features/FileUploader'
+import { MergeButton } from 'features/MergeButton'
+
+import styles from 'shared/styles/Pages.module.scss'
+
 
 export const MergePage = () => {
 	const { t } = useTranslation();
