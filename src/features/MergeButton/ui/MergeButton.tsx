@@ -1,5 +1,6 @@
 import { clearFiles } from 'app/store/slices/pdfSlice'
 import { RootState } from 'app/store/store'
+import { showToast } from 'entities/Toast'
 import { saveAs } from 'file-saver'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,27 +14,49 @@ export const MergeButton = () => {
 
   const handleMerge = async (): Promise<void> => {
     if (files.length < 2) {
-      alert('Загрузите хотя бы два файла для объединения.');
+      showToast({
+        title: t('notification.warning'),
+        text: t('notification.twoCountFiles'),
+        type: 'warning',
+      });
       return;
     }
 
+    console.log(task);
+
     if (!task) {
-      alert('Задача не создана.');
+      console.error('Задача не создана.');
       return;
     }
 
     try {
 
+      showToast({
+        title: t('notification.info'),
+        text: t('notification.startProcessMerge'),
+        type: 'info',
+      });
+      
       await task.process();
 
       const result = await task.download();
+
+      showToast({
+        title: t('notification.success'),
+        text: t('notification.mergeSuccess'),
+        type: 'success',
+      });
 
       saveAs(new Blob([result]), 'merged_file.pdf');
 
       dispatch(clearFiles());
     } catch (error) {
       console.error('Ошибка при объединении файлов:', error);
-      alert('Не удалось объединить файлы. Попробуйте снова.');
+      showToast({
+        title: t('notification.error'),
+        text: t('notification.mergeError'),
+        type: 'error',
+      });
     }
   };
 

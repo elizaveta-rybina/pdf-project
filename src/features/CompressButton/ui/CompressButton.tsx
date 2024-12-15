@@ -1,5 +1,6 @@
 import { clearFiles } from 'app/store/slices/pdfSlice'
 import { RootState } from 'app/store/store'
+import { showToast } from 'entities/Toast'
 import { saveAs } from 'file-saver'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,7 +14,11 @@ export const CompressButton = () => {
 
   const handleCompress = async (): Promise<void> => {
     if (files.length < 1) {
-      alert('Загрузите хотя бы один файл для сжатия.');
+      showToast({
+        title: t('notification.warning'),
+        text: t('notification.oneCountFiles'),
+        type: 'warning',
+      });
       return;
     }
 
@@ -25,17 +30,32 @@ export const CompressButton = () => {
     try {
       console.log(task);
 
+      showToast({
+        title: t('notification.info'),
+        text: t('notification.startProcessCompress'),
+        type: 'info',
+      });
+
       await task.process({ compression_level: 'extreme' });
 
       const result = await task.download();
+      
+      showToast({
+        title: t('notification.success'),
+        text: t('notification.compressSuccess'),
+        type: 'success',
+      });
 
       saveAs(new Blob([result]), 'compress_file.pdf');
 
-      alert('Файл успешно сжат и скачан!');
       dispatch(clearFiles());
     } catch (error) {
       console.error('Ошибка при сжатии файла:', error);
-      alert('Не удалось сжать файлы. Попробуйте снова.');
+      showToast({
+        title: t('notification.error'),
+        text: t('notification.compressError'),
+        type: 'error',
+      });
     }
   };
 
