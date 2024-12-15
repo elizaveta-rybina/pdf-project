@@ -1,13 +1,15 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export interface PdfState { // Экспортируем PdfState
+export interface PdfState {
   files: Array<{ name: string; file: File; url: string }>;
-  task: any; // Тип task можно уточнить, если есть информация о его типе
+  task: any;
+  url: string | null; // Тип url изменен на string | null
 }
 
 const initialState: PdfState = {
   files: [],
-  task: null, // Изначально задача пуста
+  task: null,
+  url: null, // Изначально ссылка пуста
 };
 
 const pdfSlice = createSlice({
@@ -24,8 +26,11 @@ const pdfSlice = createSlice({
       state.files = [];
       state.task = null; // Очищаем задачу
     },
+    addUrl: (state, action: PayloadAction<string>) => {
+      state.url = action.payload; // Добавляем ссылку в состояние
+    },
   },
 });
 
-export const { addFile, setTask, clearFiles } = pdfSlice.actions;
+export const { addFile, setTask, clearFiles, addUrl } = pdfSlice.actions;
 export default pdfSlice.reducer;

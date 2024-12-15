@@ -12,7 +12,7 @@
 		"split": "Split PDF",
 		"compress": "Compress PDF",
 		"wordToPDF": "Word To PDF",
-		"PDFToPowerPoint": "PDF to PowerPoint",
+		"htmlToPdf": "HTML to PDF",
 		"PowerPointToPDF": "PowerPoint to PDF",
 		"JPGToPDF": "JPG to PDF",
 		"PDFToJPG": "PDF to JPG"
@@ -22,7 +22,7 @@
 		"split": "Separate one page or a whole set for easy conversion into independent PDF files.",
 		"compress": "Reduce file size while optimizing for maximal PDF quality.",
 		"wordToPDF": "Make DOC and DOCX files easy to read by converting them to PDF.",
-		"PDFToPowerPoint": "Turn your PDF files into easy to edit PPT and PPTX slideshows.",
+		"htmlToPdf": "Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.",
 		"PowerPointToPDF": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
 		"JPGToPDF": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
 		"PDFToJPG": "Convert each PDF page into a JPG or extract all images contained in a PDF."
@@ -46,6 +46,12 @@
 		"title" : "Word To PDF",
 		"text": "Make DOC and DOCX files easy to read by converting them to PDF.",
 		"officeToPdfButtonText": "Convert Word to PDF"
+	},
+	"htmlToPdfPage": {
+		"title" : "HTML to PDF",
+		"text": "Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.",
+		"placeholder": "For example: https://ilovepdf.com",
+		"htmlToPdfPageButtonText": "Convert HTML to PDF"
 	},
 	"uploadButton": {
 		"buttonText": "Select files",
