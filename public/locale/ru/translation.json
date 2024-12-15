@@ -42,6 +42,11 @@
     "text": "Сделайте файлы DOC и DOCX удобными для чтения, преобразовав их в PDF.",
     "officeToPdfButtonText": "Преобразовать Word в PDF"
 	},
+	"imageToPDFPage": {
+  "title": "JPG в PDF",
+  "text": "Преобразуйте изображения JPG в PDF за считанные секунды. Легко настройте ориентацию и поля.",
+  "imageToPDFButtonText": "Преобразовать JPG в PDF"
+	},
 	"uploadButton": {
 		"buttonText": "Выбрать файлы",
 		"notLoadedText": "Файлы не загружены",

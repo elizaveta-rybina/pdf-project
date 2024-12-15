@@ -65,7 +65,7 @@ export const boardsData: BoardData[] = [
 		active: true,
 		title: 'boardsTitle.JPGToPDF',
 		description: 'boardsDescription.JPGToPDF',
-		link: '/JPGToPDF',
+		link: '/imageToPdf',
 		icon: FaImage,
 	},
 	{

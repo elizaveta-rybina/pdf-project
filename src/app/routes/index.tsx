@@ -1,17 +1,18 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import { CompressPage } from 'pages/CompressPage'
 import { MainPage } from 'pages/MainPage'
 import { MergePage } from 'pages/MergePage'
 import { OfficeToPdfPage } from 'pages/OfficeToPdfPage'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ImagePdfPage } from 'pages/ImagePdfPage'
+
 import { Layout } from 'shared/ui/Layout'
 
-// Define route types if you're using TypeScript
 interface Route {
   path: string;
   element: JSX.Element;
 }
 
-// Define the route array with types
 const routes: Route[] = [
   {
     path: '/',
@@ -42,6 +43,14 @@ const routes: Route[] = [
     element: (
       <Layout>
         <OfficeToPdfPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/imageToPdf',
+    element: (
+      <Layout>
+        <ImagePdfPage />
       </Layout>
     ),
   },
