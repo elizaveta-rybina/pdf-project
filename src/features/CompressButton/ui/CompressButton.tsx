@@ -4,7 +4,7 @@ import { showToast } from 'entities/Toast'
 import { saveAs } from 'file-saver'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from '../styles/CompressButton.module.scss'
+import styles from 'shared/styles/Button.module.scss'
 
 export const CompressButton = () => {
   const {t} = useTranslation();
