@@ -5,6 +5,7 @@ import { ImagePdfPage } from 'pages/ImagePdfPage'
 import { MainPage } from 'pages/MainPage'
 import { MergePage } from 'pages/MergePage'
 import { OfficeToPdfPage } from 'pages/OfficeToPdfPage'
+import { PdfToImagePage } from 'pages/PdfToImagePage'
 
 import { HtmlToPdfPage } from 'pages/HtmlToPdfPage'
 import { Layout } from 'shared/ui/Layout'
@@ -60,6 +61,14 @@ const routes: Route[] = [
     element: (
       <Layout>
         <HtmlToPdfPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/pdfToImage',
+    element: (
+      <Layout>
+        <PdfToImagePage />
       </Layout>
     ),
   },
