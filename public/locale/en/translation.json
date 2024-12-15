@@ -41,5 +41,23 @@
 		"buttonText": "Select PDF files",
 		"notLoadedText": "Files not uploaded",
 		"loadedText": "Files uploaded successfully!"
+	},
+	"notification": {
+		"success": "Success",
+		"error": "Error",
+		"warning": "Warning",
+		"info": "Information",
+		"download": "Download",
+		"notPDF": "The file is not a PDF",
+		"fileAddSuccess": "File added successfully!",
+		"fileAddError": "Error adding file, try again later",
+		"mergeSuccess": "Files merged successfully!",
+		"mergeError": "Error merging files",
+		"twoCountFiles": "Please upload at least two files to combine",
+		"oneCountFiles": "Please upload at least one file to combine",
+		"compressSuccess": "File compressed successfully!",
+		"compressError": "File compression error",
+		"startProcessMerge": "Starting the file merging process",
+		"startProcessCompress": "Starting the file compressing process"
 	}
 }
