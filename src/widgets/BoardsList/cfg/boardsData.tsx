@@ -55,10 +55,10 @@ export const boardsData: BoardData[] = [
 		icon: FaPowerOff,
 	},
 	{
-		active: false,
-		title: 'boardsTitle.PowerPointToPDF',
-		description: 'boardsDescription.PowerPointToPDF',
-		link: '/PowerPointToPDF',
+		active: true,
+		title: 'boardsTitle.htmlToPdf',
+		description: 'boardsDescription.htmlToPdf',
+		link: '/htmlToPdf',
 		icon: FaRegFileAlt,
 	},
 	{

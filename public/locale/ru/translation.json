@@ -12,8 +12,8 @@
 		"split": "Разделить PDF",
 		"compress": "Сжать PDF",
 		"wordToPDF": "Word в PDF",
-		"PDFToPowerPoint": "PDF в PowerPoint",
-    "PowerPointToPDF": "PowerPoint to PDF",
+		"htmlToPdf": "HTML в PDF",
+    "PowerPointToPDF": "PowerPoint в PDF",
 		"JPGToPDF": "JPG в PDF",
 		"PDFToJPG": "PDF в JPG"
 	},
@@ -22,7 +22,7 @@
 		"split": "Разделите одну страницу или целый набор для легкой конвертации в независимые PDF файлы.",
 		"compress": "Уменьшите размер файла, оптимизируя максимальное качество PDF.",
 		"wordToPDF": "Сделайте файлы DOC и DOCX удобными для чтения, конвертировав их в PDF.",
-		"PDFToPowerPoint": "Преобразуйте ваши PDF-файлы в легко редактируемые слайды PPT и PPTX.",
+		"htmlToPdf": "Преобразуйте веб-страницы в HTML в PDF-файл. Скопируйте и вставьте URL-адрес нужной страницы и конвертируйте его в формат PDF одним щелчком мыши",
     "PowerPointToPDF": "Преобразуйте PPT и PPTX слайд-шоу в удобный для просмотра PDF.",
 		"JPGToPDF": "Преобразуйте изображения JPG в PDF за несколько секунд. Легко настройте ориентацию и поля.",
 		"PDFToJPG": "Преобразуйте каждую страницу PDF в JPG или извлеките все изображения, содержащиеся в PDF."
@@ -41,6 +41,12 @@
     "title": "Word в PDF",
     "text": "Сделайте файлы DOC и DOCX удобными для чтения, преобразовав их в PDF.",
     "officeToPdfButtonText": "Преобразовать Word в PDF"
+	},
+	"htmlToPdfPage": {
+		"title" : "HTML в PDF",
+		"text": "Конвертируйте веб-страницы в HTML в PDF. Скопируйте и вставьте URL страницы, которую вы хотите преобразовать в PDF, и сделайте это одним кликом.",
+		"placeholder": "Пример: https://ilovepdf.com",
+		"htmlToPdfPageButtonText": "Конвертировать HTML в PDF"
 	},
 	"imageToPDFPage": {
   "title": "JPG в PDF",

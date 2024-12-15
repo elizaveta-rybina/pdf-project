@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { CompressPage } from 'pages/CompressPage'
+import { ImagePdfPage } from 'pages/ImagePdfPage'
 import { MainPage } from 'pages/MainPage'
 import { MergePage } from 'pages/MergePage'
 import { OfficeToPdfPage } from 'pages/OfficeToPdfPage'
-import { ImagePdfPage } from 'pages/ImagePdfPage'
 
+import { HtmlToPdfPage } from 'pages/HtmlToPdfPage'
 import { Layout } from 'shared/ui/Layout'
 
 interface Route {
@@ -51,6 +52,14 @@ const routes: Route[] = [
     element: (
       <Layout>
         <ImagePdfPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/htmlToPdf',
+    element: (
+      <Layout>
+        <HtmlToPdfPage />
       </Layout>
     ),
   },
