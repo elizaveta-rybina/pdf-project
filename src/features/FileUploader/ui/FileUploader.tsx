@@ -1,11 +1,12 @@
-import ILovePDFApi from '@ilovepdf/ilovepdf-js'
-import ILovePDFTool from '@ilovepdf/ilovepdf-js-core/types/ILovePDFTool'
-import ILovePDFFile from 'app/api/ILovePDFFile'
-import { addFile, setTask } from 'app/store/slices/pdfSlice'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
-import styles from '../styles/FileUploader.module.scss'
+import ILovePDFApi from '@ilovepdf/ilovepdf-js';
+import ILovePDFTool from '@ilovepdf/ilovepdf-js-core/types/ILovePDFTool';
+import ILovePDFFile from 'app/api/ILovePDFFile';
+import { addFile, setTask } from 'app/store/slices/pdfSlice';
+import { showToast } from 'entities/Toast';
+import { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import styles from '../styles/FileUploader.module.scss';
 
 interface FileUploaderProps {
   taskType: ILovePDFTool;
@@ -21,26 +22,48 @@ export const FileUploader = ({ taskType, taskClass }: FileUploaderProps) => {
 
   const task = instance.newTask(taskType) as InstanceType<typeof taskClass>;
 
+  const addTaskToRedux = () => {
+    dispatch(setTask(task));
+  };
+
   const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
-  const files = event.target.files;
-  if (!files) return;
+    const files = event.target.files;
+    if (!files) return;
 
-  const fileArray = Array.from(files);
+    const fileArray = Array.from(files);
+    const uploaded = await uploadFiles(fileArray);
 
-  try {
-    const uploaded = await Promise.all(
-      fileArray.map(async (file) => {
-        if (file.type !== 'application/pdf') {
-          console.error(`Файл ${file.name} не является PDF.`);
-          return null;
-        }
+    if (uploaded.length > 0) {
+      setUploadedFiles((prevFiles) => [...prevFiles, ...uploaded]);
+      addTaskToRedux();
+    }
+  };
 
+  const uploadFiles = async (files: File[]) => {
+    await task.start();
+    const uploadedFiles: string[] = [];
+
+    for (const file of files) {
+      if (file.type !== 'application/pdf') {
+        showToast({
+          title: t('notification.error'),
+          text: t('notification.notPDF'),
+          type: 'error',
+        });
+        continue;
+      }
+
+      try {
         const fileURL = URL.createObjectURL(file);
         const ilovePDFFile = new ILovePDFFile(file);
 
-        // Добавляем файл в задачу
         await task.addFile(ilovePDFFile);
-        console.log(`Файл ${file.name} добавлен в задачу.`);
+
+        showToast({
+          title: t('notification.success'),
+          text: t('notification.fileAddSuccess'),
+          type: 'success',
+        });
 
         const pdfFile = {
           name: file.name,
@@ -48,38 +71,20 @@ export const FileUploader = ({ taskType, taskClass }: FileUploaderProps) => {
           url: fileURL,
         };
 
-        // Добавляем файл в Redux
         dispatch(addFile(pdfFile));
-        return file.name;
-      })
-    );
-
-    const filteredUploaded = uploaded.filter((name): name is string => name !== null);
-
-    setUploadedFiles((prevFiles) => [
-      ...prevFiles,
-      ...filteredUploaded,
-    ]);
-  } catch (error) {
-    console.error('Ошибка при добавлении файлов:', error);
-  }
-};
-
-useEffect(() => {
-    const startTask = async () => {
-      try {
-        await task.start();
-        dispatch(setTask(task));
+        uploadedFiles.push(file.name);
       } catch (error) {
-        console.error('Ошибка при запуске задачи:', error);
+        console.error('Ошибка при добавлении файлов:', error);
+        showToast({
+          title: t('notification.error'),
+          text: t('notification.fileAddError'),
+          type: 'error',
+        });
       }
-    };
+    }
 
-    startTask();
-  }, [dispatch, task]);
-
-  console.log(task);
-
+    return uploadedFiles;
+  };
 
   return (
     <div className={styles.container}>
