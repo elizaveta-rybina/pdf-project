@@ -12,12 +12,12 @@ export const OfficeToPdfPage = () => {
 	const [OfficeToPdf, setOfficeToPdfTask] = useState<new (...args: any[]) => any | null>();
 
 	useEffect(() => {
-		const loadMergeTask = async () => {
+		const loadConvertTask = async () => {
 			const { default: TaskClass } = await import('@ilovepdf/ilovepdf-js-core/tasks/OfficePdfTask');
 			setOfficeToPdfTask(() => TaskClass);
 		};
 
-		loadMergeTask();
+		loadConvertTask();
 	}, []);
 
 	return (
