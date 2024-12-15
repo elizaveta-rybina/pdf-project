@@ -37,27 +37,35 @@
 		"text": "Reduce file size while optimizing for maximal PDF quality.",
 		"compressButtonText": "Compress files"
 	},
+	"officeToPdfPage": {
+		"title" : "Word To PDF",
+		"text": "Make DOC and DOCX files easy to read by converting them to PDF.",
+		"officeToPdfButtonText": "Convert Word to PDF"
+	},
 	"uploadButton": {
-		"buttonText": "Select PDF files",
+		"buttonText": "Select files",
 		"notLoadedText": "Files not uploaded",
 		"loadedText": "Files uploaded successfully!"
 	},
 	"notification": {
-		"success": "Success",
-		"error": "Error",
-		"warning": "Warning",
-		"info": "Information",
-		"download": "Download",
-		"notPDF": "The file is not a PDF",
-		"fileAddSuccess": "File added successfully!",
-		"fileAddError": "Error adding file, try again later",
-		"mergeSuccess": "Files merged successfully!",
-		"mergeError": "Error merging files",
-		"twoCountFiles": "Please upload at least two files to combine",
-		"oneCountFiles": "Please upload at least one file to combine",
-		"compressSuccess": "File compressed successfully!",
-		"compressError": "File compression error",
-		"startProcessMerge": "Starting the file merging process",
-		"startProcessCompress": "Starting the file compressing process"
+    "success": "Successfully",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "download": "Download",
+    "invalidFileType": "Invalid file type.",
+    "fileAddSuccess": "File added successfully!",
+    "fileAddError": "Error adding file, please try again later",
+    "mergeSuccess": "Files merged successfully!",
+    "mergeError": "Error merging files",
+    "startProcessMerge": "Starting the file merge process",
+    "compressSuccess": "File successfully compressed!",
+    "compressError": "Error compressing the file",
+    "startProcessCompress": "Starting the file compression process",
+    "convertSuccess": "File successfully converted!",
+    "convertError": "Error converting the file",
+    "startProcessConvert": "Starting the file conversion process",
+    "oneCountFiles": "Please upload at least one file to merge",
+    "twoCountFiles": "Please upload at least two files to merge"
 	}
 }

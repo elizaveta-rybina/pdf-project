@@ -44,7 +44,7 @@ export const boardsData: BoardData[] = [
 		active: true,
 		title: 'boardsTitle.wordToPDF',
 		description: 'boardsDescription.wordToPDF',
-		link: '/wordToPDF',
+		link: '/officeToPdf',
 		icon: FaFilePdf,
 	},
 	{

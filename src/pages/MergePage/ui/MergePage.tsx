@@ -2,7 +2,7 @@ import { FileUploader } from 'features/FileUploader'
 import { MergeButton } from 'features/MergeButton'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styles from '../styles/MergePage.module.scss'
+import styles from "shared/styles/Pages.module.scss"
 
 export const MergePage = () => {
 	const { t } = useTranslation();
@@ -11,7 +11,7 @@ export const MergePage = () => {
 	useEffect(() => {
 		const loadMergeTask = async () => {
 			const { default: TaskClass } = await import('@ilovepdf/ilovepdf-js-core/tasks/MergeTask');
-			setMergeTask(() => TaskClass); // Устанавливаем класс задачи в состояние
+			setMergeTask(() => TaskClass);
 		};
 
 		loadMergeTask();
@@ -24,7 +24,8 @@ export const MergePage = () => {
 			{MergeTask && (
 				<FileUploader
 					taskType="merge"
-					taskClass={MergeTask} // Передаём класс задачи
+					taskClass={MergeTask}
+					acceptedFileType="application/pdf"
 				/>
 			)}
 			<MergeButton />

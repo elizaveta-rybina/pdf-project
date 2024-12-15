@@ -25,6 +25,7 @@ export const CompressPage = () => {
 				<FileUploader
 					taskType="compress"
 					taskClass={CompressTask}
+					acceptedFileType="application/pdf"
 				/>
 			)}
 			<CompressButton />
