@@ -30,9 +30,16 @@
 	"mergePage": {
 		"title" : "Merge PDF files",
 		"text": "Combine PDFs in the order you want with the easiest PDF merger available.",
+		"mergeButtonText": "Merge files"
+	},
+	"compressPage": {
+		"title" : "Compress PDF files",
+		"text": "Reduce file size while optimizing for maximal PDF quality.",
+		"compressButtonText": "Compress files"
+	},
+	"uploadButton": {
 		"buttonText": "Select PDF files",
 		"notLoadedText": "Files not uploaded",
-		"loadedText": "Files uploaded successfully!",
-		"mergeButtonText": "Merge files"
+		"loadedText": "Files uploaded successfully!"
 	}
 }

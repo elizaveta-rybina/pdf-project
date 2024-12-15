@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import PdfReducer from './slices/pdfSlice';
+import { configureStore } from '@reduxjs/toolkit'
+import pdfReducer, { PdfState } from './slices/pdfSlice'
 
 const store = configureStore({
   reducer: {
-    pdf: PdfReducer,
+    pdf: pdfReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -11,7 +11,9 @@ const store = configureStore({
     }),
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = {
+  pdf: PdfState; // Типизируем состояние
+};
 export type AppDispatch = typeof store.dispatch;
 
 export default store;

@@ -1,4 +1,4 @@
-import { LanguageToggle } from 'features/LanguageToggle'
+import { LanguageToggle } from 'entities/LanguageToggle'
 import { LoginButton } from 'entities/LoginButton'
 import { useTranslation } from 'react-i18next'
 
