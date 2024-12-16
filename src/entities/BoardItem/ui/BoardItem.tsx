@@ -25,7 +25,7 @@ export const BoardItem = ({ title, description, active, navigationValue, icon: I
       onClick={handleClick}
       className={active ? styles.boardContainer : styles.boardContainerInactive}
     >
-      {Icon && <div className={styles.icon}><Icon size={40}/></div>}
+      {Icon && <div className={styles.icon}><Icon size={32}/></div>}
       <h3 className={styles.boardTitle}>{title}</h3>
       <p className={styles.boardDescription}>{description}</p>
     </button>
