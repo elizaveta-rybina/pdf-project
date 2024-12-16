@@ -48,10 +48,10 @@ export const boardsData: BoardData[] = [
 		icon: FaFilePdf,
 	},
 	{
-		active: false,
-		title: 'boardsTitle.PDFToPowerPoint',
-		description: 'boardsDescription.PDFToPowerPoint',
-		link: '/PDFToPowerPoint',
+		active: true,
+		title: 'boardsTitle.watermark',
+		description: 'boardsDescription.watermark',
+		link: '/watermark',
 		icon: FaPowerOff,
 	},
 	{
