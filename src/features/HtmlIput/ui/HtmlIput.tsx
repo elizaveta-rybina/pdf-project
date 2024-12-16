@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { addUrl } from 'app/store/slices/pdfSlice'
 
-import styles from '../styles/HtmlIput.module.scss'
+import styles from 'shared/styles/Input.module.scss'
 
 
 export const HtmlIput = () => {
