@@ -31,7 +31,6 @@ export const CompressButton = () => {
     }
 
     try {
-      console.log(task);
 
       showToast({
         title: t('notification.info'),

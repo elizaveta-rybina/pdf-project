@@ -27,7 +27,6 @@ export const FileUploader = ({ taskType, taskClass, acceptedFileType }: FileUplo
   const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
 
   const task = instance.newTask(taskType) as InstanceType<typeof taskClass>;
-  console.log(task);
 
   const addTaskToRedux = () => {
     dispatch(setTask(task));
@@ -78,8 +77,6 @@ const uploadFiles = async (files: File[]) => {
         file: file,
         url: fileURL,
       };
-
-      console.log('File to add to Redux:', pdfFile); // Лог для отладки
 
       dispatch(addFile(pdfFile));
       uploadedFiles.push(file.name);

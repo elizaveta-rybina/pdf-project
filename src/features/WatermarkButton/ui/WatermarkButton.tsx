@@ -41,7 +41,6 @@ export const WatermarkButton = () => {
     }
 
     try {
-      console.log(task);
 
       showToast({
         title: t('notification.info'),

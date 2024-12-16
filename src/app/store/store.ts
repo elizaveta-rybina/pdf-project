@@ -12,7 +12,7 @@ const store = configureStore({
 });
 
 export type RootState = {
-  pdf: PdfState; // Типизируем состояние
+  pdf: PdfState;
 };
 export type AppDispatch = typeof store.dispatch;
 

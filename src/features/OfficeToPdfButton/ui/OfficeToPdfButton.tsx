@@ -12,12 +12,10 @@ import styles from 'shared/styles/Button.module.scss'
 export const OfficeToPdfButton = () => {
   const {t} = useTranslation();
   const files = useSelector((state: RootState) => state.pdf.files || []);
-	console.log(files);
   const task = useSelector((state: RootState) => state.pdf.task);
   const dispatch = useDispatch();
 
   const handleConvert = async (): Promise<void> => {
-		console.log(task);
     if (files.length < 1) {
       showToast({
         title: t('notification.warning'),
@@ -26,8 +24,6 @@ export const OfficeToPdfButton = () => {
       });
       return;
     }
-
-    console.log(task);
 
     if (!task) {
       console.error('Задача не создана.');
