@@ -53,6 +53,12 @@
 		"placeholder": "For example: https://ilovepdf.com",
 		"htmlToPdfPageButtonText": "Convert HTML to PDF"
 	},
+	"splitPage": {
+		"title": "Split PDF",
+		"text": "Separate one page or a whole set for easy conversion into independent PDF files",
+		"placeholder": "For example: 1-2, 6-8",
+		"splitButtonText": "Split"
+	},
 	"uploadButton": {
 		"buttonText": "Select files",
 		"notLoadedText": "Files not uploaded",
@@ -72,6 +78,9 @@
     "startProcessMerge": "Starting the file merge process",
     "compressSuccess": "File successfully compressed!",
     "compressError": "Error compressing the file",
+		"splitSuccess": "File successfully splited!",
+		"splitError": "File split error",
+		"startProcessSplit": "Starting the file split process",
     "startProcessCompress": "Starting the file compression process",
     "convertSuccess": "File successfully converted!",
     "convertError": "Error converting the file",
