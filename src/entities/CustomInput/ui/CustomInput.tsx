@@ -4,7 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import styles from 'shared/styles/Input.module.scss'
 
-export const CustomInput = () => {
+type CustomInputProps = {
+  placeholder: string;
+};
+
+export const CustomInput = ({ placeholder }: CustomInputProps) => {
 	const { t } = useTranslation();
   const dispatch = useDispatch();
   const [text, setText] = useState<string>('');
@@ -23,7 +27,7 @@ export const CustomInput = () => {
       <input
         id="fileUrl"
         type="text"
-        placeholder={t('splitPage.placeholder')}
+        placeholder={placeholder}
         value={text}
         onChange={handleTextInput}
         className={styles.input}
