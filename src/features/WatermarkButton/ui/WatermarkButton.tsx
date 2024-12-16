@@ -9,14 +9,14 @@ import { showToast } from 'entities/Toast'
 import styles from 'shared/styles/Button.module.scss'
 
 
-export const SplitButton = () => {
+export const WatermarkButton = () => {
   const {t} = useTranslation();
   const files = useSelector((state: RootState) => state.pdf.files || []);
   const task = useSelector((state: RootState) => state.pdf.task); 
-  const range = useSelector((state: RootState) => state.pdf.text); // Получаем range из redux
+  const text = useSelector((state: RootState) => state.pdf.text);
   const dispatch = useDispatch();
 
-  const handleSplit = async (): Promise<void> => {
+  const handleWatermark = async (): Promise<void> => {
     if (files.length < 1) {
       showToast({
         title: t('notification.warning'),
@@ -31,10 +31,10 @@ export const SplitButton = () => {
       return;
     }
 
-    if (!range) {
+    if (!text) {
       showToast({
         title: t('notification.warning'),
-        text: t('notification.rangeRequired'),
+        text: t('notification.textRequired'),
         type: 'warning',
       });
       return;
@@ -45,31 +45,29 @@ export const SplitButton = () => {
 
       showToast({
         title: t('notification.info'),
-        text: t('notification.startProcessSplit'),
+        text: t('notification.startProcessWatermark'),
         type: 'info',
       });
 
-      await task.process({ split_mode: 'ranges', ranges: range });
-      const pdfjpgTask = await task.connect('pdfjpg');
-      await pdfjpgTask.process();
+      await task.process({ mode: 'text', text: text });
 
       const result = await task.download();
       
       showToast({
         title: t('notification.success'),
-        text: t('notification.splitSuccess'),
+        text: t('notification.watermarkSuccess'),
         type: 'success',
       });
 
       const blob = new Blob([result], { type: 'application/pdf' });
-      saveAs(blob, 'split_file.pdf');
+      saveAs(blob, 'watermark_file.pdf');
 
       dispatch(clearFiles());
     } catch (error) {
-      console.error('Ошибка при разделении файла:', error);
+      console.error('Ошибка при добавлении маркера:', error);
       showToast({
         title: t('notification.error'),
-        text: t('notification.splitError'),
+        text: t('notification.watermarkError'),
         type: 'error',
       });
     }
@@ -78,8 +76,8 @@ export const SplitButton = () => {
 
   return (
     <div className={styles.container}>
-      <button className={styles.button} onClick={handleSplit}>
-        {t("splitPage.splitButtonText")}
+      <button className={styles.button} onClick={handleWatermark}>
+        {t("watermarkPage.watermarkButtonText")}
       </button>
     </div>
   );

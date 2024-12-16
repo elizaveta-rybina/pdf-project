@@ -9,6 +9,7 @@ import { PdfToImagePage } from 'pages/PdfToImagePage'
 
 import { HtmlToPdfPage } from 'pages/HtmlToPdfPage'
 import { SplitPage } from 'pages/SplitPage'
+import { WatermarkPage } from 'pages/WatermarkPage'
 import { Layout } from 'shared/ui/Layout'
 
 interface Route {
@@ -78,6 +79,14 @@ const routes: Route[] = [
     element: (
       <Layout>
         <SplitPage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/watermark',
+    element: (
+      <Layout>
+        <WatermarkPage />
       </Layout>
     ),
   },

@@ -32,7 +32,7 @@ export const SplitPage = () => {
 					acceptedFileType="application/pdf"
 				/>
 			)}
-			<CustomInput />
+			<CustomInput placeholder={t('splitPage.placeholder')}/>
 			<SplitButton />
 		</div>
 	);
