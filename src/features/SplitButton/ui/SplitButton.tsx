@@ -13,7 +13,7 @@ export const SplitButton = () => {
   const {t} = useTranslation();
   const files = useSelector((state: RootState) => state.pdf.files || []);
   const task = useSelector((state: RootState) => state.pdf.task); 
-  const range = useSelector((state: RootState) => state.pdf.range); // Получаем range из redux
+  const range = useSelector((state: RootState) => state.pdf.text); // Получаем range из redux
   const dispatch = useDispatch();
 
   const handleSplit = async (): Promise<void> => {
