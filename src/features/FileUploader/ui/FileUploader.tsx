@@ -27,7 +27,6 @@ export const FileUploader = ({ taskType, taskClass, acceptedFileType }: FileUplo
   const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
 
   const task = instance.newTask(taskType) as InstanceType<typeof taskClass>;
-  console.log(task);
 
   const addTaskToRedux = () => {
     dispatch(setTask(task));

@@ -25,7 +25,7 @@ export const ImageToPdfButton = () => {
       return;
     }
 
-    console.log(task);
+    
 
     if (!task) {
       console.error('Задача не создана.');

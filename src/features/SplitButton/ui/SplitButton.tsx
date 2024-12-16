@@ -41,7 +41,7 @@ export const SplitButton = () => {
     }
 
     try {
-      console.log(task);
+      
 
       showToast({
         title: t('notification.info'),

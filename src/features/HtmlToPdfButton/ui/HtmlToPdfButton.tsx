@@ -40,8 +40,6 @@ export const HtmlToPdfButton = ({ taskType, taskClass }: HtmlToPdfButtonProps) =
 
     await task.start();
 
-    console.log(task);
-
     if (!task) {
       console.error('Задача не создана.');
       return;
