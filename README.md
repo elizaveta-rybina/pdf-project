@@ -1,34 +1,34 @@
-# Мини копия сайта iLovePDF
+# Mini Version of iLovePDF Website
 
-Данный проект является мини копией сайта [iLovePDF](https://www.ilovepdf.com).
+This project is a mini version of the website [iLovePDF](https://www.ilovepdf.com).
 
-## Установка
+## Installation
 
-В начале работы необходимо установить следующие библиотеки:
+To get started, you need to install the following libraries:
 
 ```bash
 npm install @ilovepdf/ilovepdf-js
 ```
 
-Не забудьте использовать:
+Don't forget to run:
 
 ```bash
 npm i
 ```
 
-## Функционал
+## Features
 
-В данном проекте реализованы следующие функции:
+This project includes the following functionalities:
 
-1. Объединение файлов
-2. Разделение файла
-3. Сжатие файла
-4. Конвертация из Word в PDF
-5. Конвертация из PDF в JPG
-6. Конвертация из HTML в PDF
-7. Конвертация из JPG в PDF
-8. Добавление водяного знака в PDF (только текст)
+1. Merging files
+2. Splitting a file
+3. Compressing a file
+4. Converting Word to PDF
+5. Converting PDF to JPG
+6. Converting HTML to PDF
+7. Converting JPG to PDF
+8. Adding a watermark to PDF (text only)
 
-## Настройка
+## Setup
 
-После клонирования проекта вам необходимо создать файл `.env` и записать туда свой публичный ключ из личного кабинета [iLovePDFApi](https://developer.ilovepdf.com/).
+After cloning the project, you need to create a `.env` file and add your public key from the [iLovePDF API](https://developer.ilovepdf.com/).
