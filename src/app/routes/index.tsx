@@ -8,6 +8,7 @@ import { OfficeToPdfPage } from 'pages/OfficeToPdfPage'
 import { PdfToImagePage } from 'pages/PdfToImagePage'
 
 import { HtmlToPdfPage } from 'pages/HtmlToPdfPage'
+import { SplitPage } from 'pages/SplitPage'
 import { Layout } from 'shared/ui/Layout'
 
 interface Route {
@@ -69,6 +70,14 @@ const routes: Route[] = [
     element: (
       <Layout>
         <PdfToImagePage />
+      </Layout>
+    ),
+  },
+  {
+    path: '/split',
+    element: (
+      <Layout>
+        <SplitPage />
       </Layout>
     ),
   },

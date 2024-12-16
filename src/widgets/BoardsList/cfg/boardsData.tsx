@@ -27,7 +27,7 @@ export const boardsData: BoardData[] = [
 		icon: FaRegFileAlt,
 	},
 	{
-		active: false,
+		active: true,
 		title: 'boardsTitle.split',
 		description: 'boardsDescription.split',
 		link: '/split',
