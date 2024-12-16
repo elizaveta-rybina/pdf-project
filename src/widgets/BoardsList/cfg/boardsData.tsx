@@ -1,12 +1,15 @@
+import { BiMerge } from "react-icons/bi"
 import {
 	FaCompress,
-	FaFilePdf,
+	FaHtml5,
 	FaImage,
-	FaPowerOff,
-	FaRegFileAlt,
 	FaRegFileImage,
+	FaRegFileWord,
+	FaStamp
 } from 'react-icons/fa'
-import { FaArrowsSplitUpAndLeft } from 'react-icons/fa6'
+
+import { PiSplitHorizontalBold } from "react-icons/pi"
+
 
 import { IconType } from 'react-icons'
 
@@ -24,14 +27,14 @@ export const boardsData: BoardData[] = [
 		title: 'boardsTitle.merge',
 		description: 'boardsDescription.merge',
 		link: '/merge',
-		icon: FaRegFileAlt,
+		icon: BiMerge,
 	},
 	{
 		active: true,
 		title: 'boardsTitle.split',
 		description: 'boardsDescription.split',
 		link: '/split',
-		icon: FaArrowsSplitUpAndLeft,
+		icon: PiSplitHorizontalBold,
 	},
 	{
 		active: true,
@@ -45,21 +48,21 @@ export const boardsData: BoardData[] = [
 		title: 'boardsTitle.wordToPDF',
 		description: 'boardsDescription.wordToPDF',
 		link: '/officeToPdf',
-		icon: FaFilePdf,
+		icon: FaRegFileWord,
 	},
 	{
 		active: true,
 		title: 'boardsTitle.watermark',
 		description: 'boardsDescription.watermark',
 		link: '/watermark',
-		icon: FaPowerOff,
+		icon: FaStamp,
 	},
 	{
 		active: true,
 		title: 'boardsTitle.htmlToPdf',
 		description: 'boardsDescription.htmlToPdf',
 		link: '/htmlToPdf',
-		icon: FaRegFileAlt,
+		icon: FaHtml5,
 	},
 	{
 		active: true,
