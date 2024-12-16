@@ -10,7 +10,7 @@ interface BoardItemProps {
   description: string
   active: boolean
   navigationValue: string
-  icon: IconType  // Тип компонента для иконки
+  icon: IconType
 }
 
 export const BoardItem = ({ title, description, active, navigationValue, icon: Icon }: BoardItemProps) => {
@@ -25,7 +25,7 @@ export const BoardItem = ({ title, description, active, navigationValue, icon: I
       onClick={handleClick}
       className={active ? styles.boardContainer : styles.boardContainerInactive}
     >
-      {Icon && <div className={styles.icon}><Icon size={40}/></div>}  {/* Правильный рендер компонента иконки */}
+      {Icon && <div className={styles.icon}><Icon size={40}/></div>}
       <h3 className={styles.boardTitle}>{title}</h3>
       <p className={styles.boardDescription}>{description}</p>
     </button>
