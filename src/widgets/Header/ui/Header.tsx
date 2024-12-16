@@ -6,7 +6,6 @@ import styles from '../styles/Header.module.scss'
 
 interface HeaderProps {}
 
-//TODO: Вынести навигацию в отдельный компонент
 export const Header = ({}: HeaderProps) => {
 	const { t } = useTranslation();
 	return (

@@ -1,94 +1,107 @@
 @import 'app/consts/variables';
 
 .header {
-	margin: 1rem;
-	display: flex;
-	padding: 1rem 3rem;
-	border-radius: 2rem;
-	justify-content: space-between;
-	align-items: center;
-	background-color: var(--accent-secondary);
+  margin: 1rem;
+  display: flex;
+  padding: 3rem 3rem;
+  border-radius: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent-secondary);
 
-	.logo {
-		font-size: var(--font-size-large);
-		font-weight: var(--font-weight-bold);
-		text-decoration: none;
-		color: var(--text-white);
-		letter-spacing: 2px;
-		transition: color 0.3s ease;
-	}
+  .logo {
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--text-white);
+    letter-spacing: 2px;
+		margin: auto 0;
+    transition: color 0.3s ease;
+  }
 
-	.nav {
-		display: flex;
-		flex-flow: row nowrap;
-		gap: 3rem;
+  .rightControls {
+    display: flex;
+    gap: 1rem;
 
-		.navItem {
-			font-size: var(--font-size-smaller);
-			color: var(--text-white);
-			text-decoration: none;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			padding: 0 10px;
-			font-weight: var(--font-weight-bold);
-			transition: all 0.3s ease-in-out;
+    .button {
+      padding: var(--button-padding);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
 
-			// &:hover {
-      //   color: var(--text-tertiary);
-			// 	transition: all 0.3s ease;
-      // }
-		}
-	}
+      &.languageToggle {
+        background-color: var(--accent-primary);
+        color: white;
 
-	.rightControls {
-		display: flex;
-		gap: 1rem;
+        &:hover {
+          background-color: var(--accent-secondary);
+        }
+      }
 
-		.button {
-			padding: var(--button-padding);
-			font-size: var(--button-font-size);
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-			transition: background-color 0.3s ease, color 0.3s ease;
+      &.loginButton {
+        background-color: transparent;
+        color: var(--accent-primary);
+        border: 1px solid var(--accent-primary);
 
-			&.languageToggle {
-				background-color: var(--accent-primary);
-				color: white;
-
-				&:hover {
-					background-color: var(--accent-secondary);
-				}
-			}
-
-			&.loginButton {
-				background-color: transparent;
-				color: var(--accent-primary);
-				border: 1px solid var(--accent-primary);
-
-				&:hover {
-					background-color: var(--accent-primary);
-					color: white;
-				}
-			}
-		}
-	}
+        &:hover {
+          background-color: var(--accent-primary);
+          color: white;
+        }
+      }
+    }
+  }
 }
 
-@media (max-width: 768px) {
-	.header {
-		flex-direction: column;
-		align-items: flex-start;
-		padding: var(--padding-small);
-	}
+/* Мобильные устройства */
+@media (max-width: 599px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: var(--padding-medium);
+    margin: 1rem;
+  }
 
-	.nav {
-		flex-direction: column;
-		gap: 1rem;
-	}
+  .logo {
+    letter-spacing: 1px;
+  }
 
-	.rightControls {
-		flex-direction: column;
-		gap: 1rem;
-	}
+  .rightControls {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .header {
+    flex-direction: row;
+    padding: var(--padding-large);
+    justify-content: space-between;
+  }
+
+  .rightControls {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: var(--font-size-medium);
+  }
+}
+
+/* Десктопы */
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    padding: var(--padding-large);
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: var(--font-size-large);
+    letter-spacing: 2px;
+  }
+
+  .rightControls {
+    gap: 1rem;
+  }
 }
