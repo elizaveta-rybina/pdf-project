@@ -78,8 +78,6 @@ const uploadFiles = async (files: File[]) => {
         url: fileURL,
       };
 
-      console.log('File to add to Redux:', pdfFile); // Лог для отладки
-
       dispatch(addFile(pdfFile));
       uploadedFiles.push(file.name);
     } catch (error) {
