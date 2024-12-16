@@ -59,6 +59,12 @@
 		"placeholder": "For example: 1-2, 6-8",
 		"splitButtonText": "Split"
 	},
+	"watermarkPage": {
+		"title": "Watermark",
+		"text": "Stamp text over your PDF in seconds. Choose the typography, transparency and position",
+		"placeholder": "For example: watermark",
+		"watermarkButtonText": "Add watermark"
+	},
 	"uploadButton": {
 		"buttonText": "Select files",
 		"notLoadedText": "Files not uploaded",
@@ -82,10 +88,14 @@
 		"splitError": "File split error",
 		"startProcessSplit": "Starting the file split process",
     "startProcessCompress": "Starting the file compression process",
+		"watermarkSuccess": "Watermark added successfully",
+		"watermarkError": "Error adding watermark",
+		"startProcessWatermark": "Starting the process of adding a watermark",
     "convertSuccess": "File successfully converted!",
     "convertError": "Error converting the file",
     "startProcessConvert": "Starting the file conversion process",
     "oneCountFiles": "Please upload at least one file to merge",
-    "twoCountFiles": "Please upload at least two files to merge"
+    "twoCountFiles": "Please upload at least two files to merge",
+		"textRequired": "Please enter the required text"
 	}
 }
