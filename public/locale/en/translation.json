@@ -42,6 +42,11 @@
 		"text": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
 		"imageToPDFButtonText": "Convert JPG to PDF"
 	},
+	"PDFtoJPGPage": {
+		"title" : "PDF to JPG",
+		"text": "Convert each PDF page into a JPG or extract all images contained in a PDF.",
+		"PDFtoJPGButtonText": "Convert PDF to JPG"
+	},
 	"officeToPdfPage": {
 		"title" : "Word To PDF",
 		"text": "Make DOC and DOCX files easy to read by converting them to PDF.",

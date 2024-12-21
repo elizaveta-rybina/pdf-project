@@ -8,68 +8,63 @@ import { saveAs } from 'file-saver'
 
 import styles from 'shared/styles/Button.module.scss'
 
-
 export const PdfToImageButton = () => {
-  const {t} = useTranslation();
-  const files = useSelector((state: RootState) => state.pdf.files || []);
-  const task = useSelector((state: RootState) => state.pdf.task);
-  const dispatch = useDispatch();
+	const { t } = useTranslation()
+	const files = useSelector((state: RootState) => state.pdf.files || [])
+	const task = useSelector((state: RootState) => state.pdf.task)
+	const dispatch = useDispatch()
 
-  const handleMerge = async (): Promise<void> => {
-    if (files.length < 1) {
-      showToast({
-        title: t('notification.warning'),
-        text: t('notification.oneCountFiles'),
-        type: 'warning',
-      });
-      return;
-    }
+	const handleMerge = async (): Promise<void> => {
+		if (files.length < 1) {
+			showToast({
+				title: t('notification.warning'),
+				text: t('notification.oneCountFiles'),
+				type: 'warning',
+			})
+			return
+		}
 
-    
+		if (!task) {
+			console.error('Задача не создана.')
+			return
+		}
 
-    if (!task) {
-      console.error('Задача не создана.');
-      return;
-    }
+		try {
+			showToast({
+				title: t('notification.info'),
+				text: t('notification.startProcessConvert'),
+				type: 'info',
+			})
 
-    try {
+			await task.process({ pdfjpg_mode: 'pages' })
 
-      showToast({
-        title: t('notification.info'),
-        text: t('notification.startProcessConvert'),
-        type: 'info',
-      });
-      
-      await task.process({ pdfjpg_mode: 'pages' });
+			const result = await task.download()
 
-      const result = await task.download();
+			showToast({
+				title: t('notification.success'),
+				text: t('notification.convertSuccess'),
+				type: 'success',
+			})
 
-      showToast({
-        title: t('notification.success'),
-        text: t('notification.convertSuccess'),
-        type: 'success',
-      });
+			const blob = new Blob([result], { type: 'application/octet-stream' })
+			saveAs(blob, 'convert.zip')
 
-      const blob = new Blob([result], { type: 'application/octet-stream' });
-      saveAs(blob, 'convert.zip');
+			dispatch(clearFiles())
+		} catch (error) {
+			console.error('Ошибка при конвертации файлов:', error)
+			showToast({
+				title: t('notification.error'),
+				text: t('notification.convertError'),
+				type: 'error',
+			})
+		}
+	}
 
-      dispatch(clearFiles());
-    } catch (error) {
-      console.error('Ошибка при конвертации файлов:', error);
-      showToast({
-        title: t('notification.error'),
-        text: t('notification.convertError'),
-        type: 'error',
-      });
-    }
-  };
-
-  return (
-    <div className={styles.container}>
-      <button className={styles.button} onClick={handleMerge}>
-        {t("imageToPDFPage.imageToPDFButtonText")}
-      </button>
-    </div>
-  );
-};
-
+	return (
+		<div className={styles.container}>
+			<button className={styles.button} onClick={handleMerge}>
+				{t('PDFtoJPGPage.PDFtoJPGButtonText')}
+			</button>
+		</div>
+	)
+}

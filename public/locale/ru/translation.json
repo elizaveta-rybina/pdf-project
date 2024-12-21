@@ -42,6 +42,11 @@
 		"text": "Преобразуйте изображения JPG в PDF за считанные секунды. Легко настройте ориентацию и поля.",
 		"imageToPDFButtonText": "Конвертировать JPG в PDF"
 	},
+	"PDFtoJPGPage": {
+		"title": "PDF в JPG",
+		"text": "Преобразуйте каждую страницу PDF в JPG или извлеките все изображения, содержащиеся в PDF.",
+		"PDFtoJPGButtonText": "Преобразовать PDF в JPG"
+	},
 	"officeToPdfPage": {
 		"title": "Word в PDF",
 		"text": "Сделайте файлы DOC и DOCX удобочитаемыми, конвертируя их в PDF.",
