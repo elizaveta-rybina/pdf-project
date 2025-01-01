@@ -1,0 +1,107 @@
+@import 'app/consts/variables';
+
+.header {
+  margin: 1rem;
+  display: flex;
+  padding: 3rem 3rem;
+  border-radius: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent-secondary);
+
+  .logo {
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--text-white);
+    letter-spacing: 2px;
+		margin: auto 0;
+    transition: color 0.3s ease;
+  }
+
+  .rightControls {
+    display: flex;
+    gap: 1rem;
+
+    .button {
+      padding: var(--button-padding);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.languageToggle {
+        background-color: var(--accent-primary);
+        color: white;
+
+        &:hover {
+          background-color: var(--accent-secondary);
+        }
+      }
+
+      &.loginButton {
+        background-color: transparent;
+        color: var(--accent-primary);
+        border: 1px solid var(--accent-primary);
+
+        &:hover {
+          background-color: var(--accent-primary);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 599px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: var(--padding-medium);
+    margin: 1rem;
+  }
+
+  .logo {
+    letter-spacing: 1px;
+  }
+
+  .rightControls {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .header {
+    flex-direction: row;
+    padding: var(--padding-large);
+    justify-content: space-between;
+  }
+
+  .rightControls {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: var(--font-size-medium);
+  }
+}
+
+/* Десктопы */
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    padding: var(--padding-large);
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: var(--font-size-large);
+    letter-spacing: 2px;
+  }
+
+  .rightControls {
+    gap: 1rem;
+  }
+}

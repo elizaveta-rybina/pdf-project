@@ -1,0 +1,39 @@
+@import 'app/consts/variables';
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input {
+  width: 50%;
+  padding: 12px 16px;
+  font-size: var(--font-size-small);
+  font-family: sans-serif;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  color: rgb(182, 182, 182);
+  
+  &:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &::placeholder {
+    color: var(--text-placeholder);
+  }
+}
+
+@media (max-width: 599px) {
+  .input {
+    width: 100% ;
+  }
+}

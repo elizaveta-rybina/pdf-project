@@ -1,0 +1,24 @@
+@import 'app/consts/variables';
+
+.title, .text {
+	font-family: "Poppins", sans-serif;
+}
+
+.title{
+	text-align: center;
+	font-size: var(--font-size-title);
+	line-height: var(--line-height-title);
+	color: var( --text-primary);
+	font-weight: 600;
+}
+
+.text{
+	max-width: 800px;
+	margin: 8px auto 0;
+	line-height: 32px;
+	font-size: var(--font-size-large);
+	font-weight: 400;
+	text-align: center;
+	color: var( --text-primary);
+}
+

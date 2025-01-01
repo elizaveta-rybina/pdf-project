@@ -1,0 +1,64 @@
+@import 'app/consts/variables.scss';
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--padding-large);
+  margin-top: var(--padding-medium);
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.container > * {
+  flex: 1 1 calc(25% - var(--padding-large));
+  max-width: calc(25% - var(--padding-large));
+  box-sizing: border-box;
+  border-radius: var(--border-radius-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+	margin-bottom: 1rem;
+}
+
+/* Мобильные устройства */
+@media (max-width: 599px) {
+  .container {
+    gap: 0;
+    margin-top: var(--padding-small);
+  }
+
+  .container > * {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .container {
+    gap: var(--padding-small);
+    margin-top: var(--padding-small);
+  }
+
+  .container > * {
+    flex: 1 1 calc(50% - var(--padding-small));
+    max-width: calc(50% - var(--padding-small));
+    height: auto; /* Автоматическая высота на планшетах */
+  }
+}
+
+/* Десктопы */
+@media (min-width: 1024px) {
+  .container {
+    gap: var(--padding-medium);
+    margin-top: var(--padding-medium);
+  }
+
+  .container > * {
+    flex: 1 1 calc(25% - var(--padding-medium));
+    max-width: calc(25% - var(--padding-medium));
+    height: 300px; /* Устанавливаем фиксированную высоту на десктопах */
+  }
+}

@@ -1,0 +1,72 @@
+:root {
+  --text-primary: #03060C;
+  --text-secondary: #2A4A6A;
+  --text-tertiary: #133E87;
+  --accent-primary: #bed6f2;
+  --accent-secondary: #468be0;
+  --background: #F3F3E0;
+  --text-white: #FFF;
+
+  --border-color: #f2f2f2;
+  --background-hover: rgba(0, 0, 0, 0.15);
+  --inactive-background: #f9f9f9;
+  --icon-background: #c7dffb;
+  --icon-hover-background: #a7c6f1;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 900;
+
+  --font-size-smaller: 8px;
+  --font-size-small: 10px;
+  --font-size-medium: 12px;
+  --font-size-large: 14px;
+  --font-size-larger: 18px;
+  --font-size-title: 22px;
+
+  --line-height-smaller: 12px;
+  --line-height-small: 14px;
+  --line-height-medium: 16px;
+  --line-height-large: 19px;
+  --line-height-title: 24px;
+
+  --padding-small: 0.3rem;
+  --padding-medium: 0.7rem;
+  --padding-large: 1rem;
+  
+  --button-padding: 0.3rem 0.7rem;
+  --button-font-size: 0.8rem;
+
+  --up-size: 0;
+  --font-size-smaller: calc(8px + var(--up-size));
+  --font-size-small: calc(10px + var(--up-size));
+  --font-size-medium: calc(12px + var(--up-size));
+  --font-size-large: calc(14px + var(--up-size));
+  --font-size-larger: calc(18px + var(--up-size));
+  --font-size-title: calc(20px + var(--up-size) * 2);
+
+  --line-height-smaller: calc(11px + var(--up-size));
+  --line-height-small: calc(13px + var(--up-size));
+  --line-height-medium: calc(15px + var(--up-size));
+  --line-height-large: calc(17px + var(--up-size));
+  --line-height-larger: calc(19px + var(--up-size));
+  --line-height-title: calc(22px + var(--up-size) * 2);
+}
+
+@media (min-width: 600px) {
+  :root {
+    --up-size: 2px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --up-size: 4px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --up-size: 6px;
+  }
+}
